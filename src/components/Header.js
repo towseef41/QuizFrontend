@@ -38,38 +38,22 @@ const Header = () => {
 
     const ctaClickHandler = () => {
         menuToggleHandler();
-        history.push("/page-cta");
+        history.push("/");
+        window.location.reload(true);
     };
 
     return (
         <header className={classes.header}>
             <div className={classes.header__content}>
                 <Link to="/" className={classes.header__content__logo}>
-                    navbar
+                    Shrimati Taskwati
                 </Link>
                 <nav
                     className={`${classes.header__content__nav} ${
                         menuOpen && size.width < 768 ? classes.isMenu : ""
                     }`}
                 >
-                    <ul>
-                        <li>
-                            <Link to="/page-one" onClick={menuToggleHandler}>
-                                PageOne
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/page-two" onClick={menuToggleHandler}>
-                                PageTwo
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/page-three" onClick={menuToggleHandler}>
-                                PageThree
-                            </Link>
-                        </li>
-                    </ul>
-                    <button onClick={ctaClickHandler}>CTA Page</button>
+                    <button onClick={ctaClickHandler}>Generate Random Task</button>
                 </nav>
                 <div className={classes.header__content__toggle}>
                     {!menuOpen ? (
